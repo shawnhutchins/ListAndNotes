@@ -1,0 +1,31 @@
+{
+  "name": "listandnotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run testsuite && npm run linter",
+    "testsuite": "NODE_ENV=test ./node_modules/.bin/mocha test/** client/test/** --recursive",
+    "coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive",
+    "linter": "jshint --config .jshintrc ./main.js ./server ./client/client.js ./client/js ./client/views ./test || true",
+    "start": "nodemon ./main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnhutchins/ListAndNotes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shawnhutchins/ListAndNotes/issues"
+  },
+  "homepage": "https://github.com/shawnhutchins/ListAndNotes#readme",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jshint": "^2.9.3",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
