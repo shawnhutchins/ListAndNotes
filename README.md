@@ -1,6 +1,6 @@
-List and Notes
+# List and Notes
 
-Todo
+## Todo
 
-1. set up a basic express site. 
-2. 
+- set up a basic express site. 
+ 
