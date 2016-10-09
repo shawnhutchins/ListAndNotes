@@ -32,7 +32,7 @@ function Server(options, app) {
 Server.prototype._createServer = function(handler) {
   let server = null;
 
-  log.info('setting up http(s) server instance');
+  console.log('setting up http(s) server instance');
 
   if (this.isConfiguredForSSL()) {
     server = https.createServer({
@@ -44,12 +44,12 @@ Server.prototype._createServer = function(handler) {
     }, handler);
 
     if (this.option.ssl.redirect) {
-      log.info('setting up http redirect to force ssl');
+      console.log('setting up http redirect to force ssl');
       http.createServer(express().use(function(req, res) {
         return res.redirect(['https://',req.hostname, req.url].join(''));
       })).listen(this.options.ssl.redirect);
     }
-  } else { 
+  } else {
     server = http.createServer(handler);
   }
 
