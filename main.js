@@ -7,22 +7,25 @@ const port    = 8080;
 
 const Server  = require('./server/index.js');
 
+app.set('view engine', 'pug');
+
 mongoose.connect('mongodb://localhost/listandnote');
 //include the note model
 var Note = require('./server/models/note.js');
 // create a note
 var newNote = Note({
   name: 'Shawns Note',
-  note: 'this is my note. It isent that long but its my note just the same. I like my note, it is nice!'
+  note: 'this is my note. It isent that long but its my note just the same.'
 });
 
-newNote.save(function(err) {
-  if (err) {
-    throw err;
-  }
+//newNote.save(function(err) {
+//  if (err) {
+//    throw err;
+//  }
 
-  console.log('Note Created!');
-});
+//  console.log('Note Created!');
+//});
+
 //look for all notes
 Note.find({}, function(err, notes) {
   if (err) {
@@ -34,7 +37,9 @@ Note.find({}, function(err, notes) {
 
 
 app.get('/', function(req, res){
-  res.send('Hello World');
+  res.render('index', {
+    title: 'Testing title', message: 'Testing message'
+  });
 });
 
 app.listen(port);
