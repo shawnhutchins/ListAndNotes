@@ -38,7 +38,7 @@ Note.find({}, function(err, notes) {
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Testing title', message: 'Testing message'
+    //title: 'Testing title', message: 'Testing message'
   });
 });
 
