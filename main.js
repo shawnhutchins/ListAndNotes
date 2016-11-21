@@ -12,13 +12,15 @@ app.use(express.static('public'));
 app.set('view engine', 'pug');
 
 mongoose.connect('mongodb://localhost/listandnote');
+
 //include the note model
-var Note = require('./server/models/note.js');
+//var Note = require('./server/models/note.js');
+
 // create a note
-var newNote = Note({
-  name: 'Shawns Note',
-  note: 'this is my note. It isent that long but its my note just the same.'
-});
+//var newNote = Note({
+//  name: 'Shawns Note',
+//  note: 'this is my note. It isent that long but its my note just the same.'
+//});
 
 //newNote.save(function(err) {
 //  if (err) {
@@ -29,13 +31,13 @@ var newNote = Note({
 //});
 
 //look for all notes
-Note.find({}, function(err, notes) {
-  if (err) {
-    throw err;
-  }
+//Note.find({}, function(err, notes) {
+//  if (err) {
+//    throw err;
+//  }
 
-  console.log(notes);
-});
+  //console.log(notes);
+//});
 
 
 app.get('/', function(req, res){
