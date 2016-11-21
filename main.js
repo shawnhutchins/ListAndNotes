@@ -7,6 +7,8 @@ const port    = 8080;
 
 const Server  = require('./server/index.js');
 
+app.use(express.static('public'));
+
 app.set('view engine', 'pug');
 
 mongoose.connect('mongodb://localhost/listandnote');
