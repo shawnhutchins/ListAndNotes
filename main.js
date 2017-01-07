@@ -1,11 +1,11 @@
 'use strict';
 
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require('express'); //the web server
+const mongoose = require('mongoose'); //
 const app     = express();
 const port    = 8080;
 
-const Server  = require('./server/index.js');
+//const Server  = require('./server/index.js');
 
 app.use(express.static('public'));
 
