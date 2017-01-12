@@ -2,8 +2,27 @@
 
 const express = require('express'); //the web server
 const mongoose = require('mongoose'); //
+const fs = require('fs');
+
 const app     = express();
 const port    = 8080;
+
+var self = this;
+
+//load routes
+var routePath = __dirname + '/routes/';
+var routes = [];
+
+console.log('Loading Routes');
+
+fs.readdirSync(routePath).forEach(function(file) {
+  var route = routePath + file;
+  var routeName = file.split('.')[0];
+
+  routes[routeName] = require(route)(self.app);
+});
+
+console.log(routes);
 
 //const Server  = require('./server/index.js');
 
