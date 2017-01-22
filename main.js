@@ -1,28 +1,16 @@
 'use strict';
 
+//Modules
 const express = require('express'); //the web server
 const mongoose = require('mongoose'); //
-const fs = require('fs');
 
+//Application
 const app     = express();
 const port    = 8080;
 
-var self = this;
 
-//load routes
-var routePath = __dirname + '/routes/';
-var routes = [];
-
-console.log('Loading Routes');
-
-fs.readdirSync(routePath).forEach(function(file) {
-  var route = routePath + file;
-  var routeName = file.split('.')[0];
-
-  routes[routeName] = require(route)(self.app);
-});
-
-console.log(routes);
+//load routes (loading individual files for now to maintain progress)
+require('./routes/notes')(app);
 
 //const Server  = require('./server/index.js');
 
@@ -59,11 +47,11 @@ mongoose.connect('mongodb://localhost/listandnote');
 //});
 
 
-app.get('/', function(req, res){
-  res.render('index', {
-    //title: 'Testing title', message: 'Testing message'
-  });
-});
+//app.get('/', function(req, res){
+//  res.render('index', {
+//    //title: 'Testing title', message: 'Testing message'
+//  });
+//});
 
 app.listen(port);
 console.log('Running on port ' + port);
