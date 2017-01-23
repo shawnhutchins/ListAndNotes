@@ -2,13 +2,13 @@
   "name": "listandnotes",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "test": "npm run testsuite && npm run linter",
-    "testsuite": "NODE_ENV=test ./node_modules/.bin/mocha test/** client/test/** --recursive",
+    "testsuite": "NODE_ENV=test ./node_modules/.bin/mocha test/** test/** --recursive",
     "coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive",
-    "linter": "jshint --config .jshintrc ./main.js ./server ./client/client.js ./client/js ./client/views ./test || true",
-    "start": "nodemon ./main.js"
+    "linter": "jshint --config .jshintrc ./app.js ./server ./client/client.js ./client/js ./client/views ./test || true",
+    "start": "nodemon ./app.js"
   },
   "repository": {
     "type": "git",
