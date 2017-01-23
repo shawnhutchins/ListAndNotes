@@ -1,22 +1,27 @@
 'use strict';
 
 //Modules
-const express = require('express'); //the web server
-const mongoose = require('mongoose'); //
+const express  = require('express'); 
+const mongoose = require('mongoose'); 
 
 //Application
 const app     = express();
 const port    = 8080;
 
+//Routes
+var notes = require('./routes/notes');//(app);
 
-//load routes (loading individual files for now to maintain progress)
-require('./routes/notes')(app);
+//View Engine Setup
+app.set('view engine', 'pug');
+
+
+app.use(express.static('public'));
+app.use('/', notes);
+
 
 //const Server  = require('./server/index.js');
 
-app.use(express.static('public'));
 
-app.set('view engine', 'pug');
 
 mongoose.connect('mongodb://localhost/listandnote');
 
