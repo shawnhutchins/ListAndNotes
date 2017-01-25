@@ -8,15 +8,20 @@ const mongoose = require('mongoose');
 const app     = express();
 const port    = 8080;
 
+//Models
+var mNote = require('./models/note');
+
 //Routes
-var notes = require('./routes/notes');//(app);
+var rRoute = require('./routes/route');
+var rNotes = require('./routes/notes');
 
 //View Engine Setup
 app.set('view engine', 'pug');
 
 
 app.use(express.static('public'));
-app.use('/', notes);
+app.use('/', rRoute);
+app.use('/notes', rNotes);
 
 
 mongoose.connect('mongodb://localhost/listandnote');

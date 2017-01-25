@@ -7,7 +7,9 @@ var router = express.Router();
 
 //routes
 router.get('/', function(req, res){
-  res.send('show notes here');
+  res.render('index', {
+    title: 'Testing title', message: 'Testing message'
+  });
 });
 
 module.exports = router;
