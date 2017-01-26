@@ -9,7 +9,7 @@ const app     = express();
 const port    = 8080;
 
 //Models
-var mNote = require('./models/note');
+//var mNote = require('./models/note');
 
 //Routes
 var rRoute = require('./routes/route');
@@ -26,8 +26,6 @@ app.use('/notes', rNotes);
 
 mongoose.connect('mongodb://localhost/listandnote');
 
-//include the note model
-//var Note = require('./models/note.js');
 
 // create a note
 //var newNote = Note({

@@ -1,1 +1,6 @@
+DOING
+-create a view for notes
+
+THINGS TO DO LATER
 -I have been looking into different project structures. In the future I would like to rename public, client and move most of what is in app.js into a server.js file which would be in a server folder. Then I would create either main.js or app.js in the main directory as the start point.
+

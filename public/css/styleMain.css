@@ -4,6 +4,15 @@
   overflow: hidden;
 }
 
+.note {
+  color: #797478;
+  font: 10px/1.5 Verdana, Helvetica, sans-serif;
+  float: left;
+
+  width: 16%;
+  margin: 2% 2% 50px 2%;
+}
+
 .galleryItem {
   color: #797478;
   font: 10px/1.5 Verdana, Helvetica, sans-serif;
