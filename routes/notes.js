@@ -24,15 +24,15 @@ router.get('/', function(req, res){
   });
 */
 
-  mNote.find({}, function(err, notes) {
+  mNote.find({}, function(err, notesFound) {
     if (err) {
       throw err;
     }
 
-    console.log(notes);
+    //var notesF = notesFound[0];
 
     res.render('notes', {
-      notes: JSON.stringify(notes.name)
+      notesFound: notesFound[0],
     });
   });
 });
