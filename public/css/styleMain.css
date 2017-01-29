@@ -4,13 +4,17 @@
   overflow: hidden;
 }
 
-.note {
-  color: #797478;
-  font: 10px/1.5 Verdana, Helvetica, sans-serif;
-  float: left;
+.noteEntry {
+  border:2px solid #EEEEEE;
+  border-radius: 10px;
+  margin: 0px auto;
+  padding: 2px;
+  width: 40%;
+}
 
-  width: 16%;
-  margin: 2% 2% 50px 2%;
+.noteEntry textarea {
+  width: 99%;
+  resize: none;
 }
 
 .galleryItem {
