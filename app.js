@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/', rRoute);
-app.use('/notes', rNotes);
+app.use('/notes/', rNotes);
 
 
 mongoose.connect('mongodb://localhost/listandnote');

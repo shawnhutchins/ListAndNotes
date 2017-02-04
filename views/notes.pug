@@ -9,8 +9,8 @@ html
   body
     .container
       .noteEntry
-        form(action="" method="post")
+        form(action="/notes/notesubmit" method="post")
           label Notes
-          textarea
+          textarea(type="text" name="newNote")
           input(type="submit" value="Save")
           

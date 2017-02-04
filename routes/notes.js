@@ -8,6 +8,12 @@ var mNote = require('../models/note');
 
 
 //routes
+
+router.post('/notesubmit', function(req, res) {
+  console.log(req.body);
+  res.render('notes');
+});
+
 router.get('/', function(req, res){
 
 /* //uncomment to make a test note
