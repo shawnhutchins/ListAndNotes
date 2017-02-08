@@ -1,11 +1,12 @@
-.container {
+.noteContainer {
   width: 80%;
   margin: 30px auto;
   overflow: hidden;
 }
 
 .noteEntry {
-  border:7px solid #BDB3B3;
+  background-color: #F4F2F2;
+  border: 7px solid #BDB3B3;
   border-radius: 10px;
   margin: 0px auto;
   padding: 2px;
@@ -28,10 +29,37 @@
   padding: 5px;
 }
 
-.noteEntry input {
-  width: 40%;
+.noteMenu {
+  display: table;
+  width: 100%;
+}
+
+.noteMenuCell {
+  display: table-cell;
+  text-align: center;
+}
+
+.dropdown-menu a {
+  color: black;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.dropdown-menu li:hover .sub-menu {
+  visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
   display: block;
-  margin: 8px auto;
+  margin-top: 0;
+}
+
+.dropdown-menu .sub-menu {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  margin-top: -1px;
 }
 
 .galleryItem {

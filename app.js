@@ -1,8 +1,8 @@
 'use strict';
 
 //Modules
-const express  = require('express'); 
-const mongoose = require('mongoose'); 
+const express    = require('express'); 
+const mongoose   = require('mongoose'); 
 const bodyParser = require('body-parser');
 
 //Application
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({
 app.use('/', rRoute);
 app.use('/notes/', rNotes);
 
-
+mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost/listandnote');
 
 
