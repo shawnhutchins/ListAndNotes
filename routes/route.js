@@ -2,13 +2,21 @@
 var express = require('express');
 var router = express.Router();
 
+var mNote = require('../models/note');
+
 //middleware
 
 
 //routes
 router.get('/', function(req, res){
-  res.render('index', {
-    title: 'Testing title', message: 'Testing message'
+  mNote.find({}, function(err, notesFound) {
+    if (err) {
+      throw err;
+    }
+    
+    res.render('dash', {
+      notesFound: notesFound,
+    });
   });
 });
 

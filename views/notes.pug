@@ -14,22 +14,8 @@ html
       .noteEntry
         form(action="/notes/save" method="post")
           label Notes
-          textarea(type="text" name="note" placeholder="Take some notes!") 
+          textarea(type="text" name="note" placeholder="Take some notes!")
+            #{notesFound}
           .noteMenu
             span.noteMenuCell
               input(type="submit" value="Save")
-            span.noteMenuCell
-              form(action="" method="get")
-                li.dropdown.btn.btn-default
-                  span.glyphicon.glyphicon-th-list
-                    |  Load 
-                    span.caret
-                  ul.dropdown-menu.dropdown-toggle(data-toggle="dropdown")
-                    li 
-                      a(href="#") note 0
-                    li
-                      a(href="#") note 1
-            span.noteMenuCell
-              input(type="button" value="Delete")
-        p For some reason the "a" tags are not showing up in the dropdown when
-          | the surrounding div is smaller than it cutting it off.

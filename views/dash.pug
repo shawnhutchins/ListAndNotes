@@ -1,0 +1,13 @@
+doctype html
+
+link(rel='stylesheet', href='/css/styleMain.css'. type='test/css')
+
+html
+  head
+    title List and Notes Dash
+  body
+    .loadContent
+      - for (var i = 0; i < notesFound.length; i++){
+        a(href="/") #{notesFound[i].note}
+        br
+      - }

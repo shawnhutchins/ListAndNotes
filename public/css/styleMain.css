@@ -29,6 +29,7 @@
   padding: 5px;
 }
 
+
 .noteMenu {
   display: table;
   width: 100%;
@@ -38,6 +39,7 @@
   display: table-cell;
   text-align: center;
 }
+
 
 .dropdown-menu a {
   color: black;
@@ -61,6 +63,7 @@
   visibility: hidden;
   margin-top: -1px;
 }
+
 
 .galleryItem {
   color: #797478;
