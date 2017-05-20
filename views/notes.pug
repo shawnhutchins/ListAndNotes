@@ -6,8 +6,15 @@ link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
 script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
 
+
 html
   head
+    script.
+      $document.ready(function(){
+        $.ajax({"url": "http://localhost:8080/notes/588a1f4bd8f81a68ac36ffa1", "success": function(result){
+          $(".note").value(result);
+        }});
+      });
     title Notes
   body
     .noteContainer
@@ -15,7 +22,7 @@ html
         form(action="/notes/save" method="post")
           label Notes
           textarea(type="text" name="note" placeholder="Take some notes!")
-            #{notesFound}
+            //#{notesFound}
           .noteMenu
             span.noteMenuCell
               input(type="submit" value="Save")

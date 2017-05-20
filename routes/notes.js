@@ -5,6 +5,10 @@ var router = express.Router();
 var mNote = require('../models/note');
 
 //middleware
+router.use(function(req, res, next) {
+  console.log('Inside the notes api!');
+  next();
+});
 
 
 //routes
@@ -27,7 +31,7 @@ router.post('/save', function(req, res) {
   res.redirect('/notes');
 });
 
-router.get('/', function(req, res){
+router.get('/', function(req, res) {
 
   mNote.find({}, function(err, notesFound) {
     if (err) {
@@ -37,6 +41,16 @@ router.get('/', function(req, res){
     res.render('notes', {
       notesFound: notesFound,
     });
+  });
+});
+
+router.get('/:note_id', function(req, res) {
+  mNote.findById(req.params.note_id, function(err, note) {
+    if (err) {
+      throw err;
+    }
+  
+    res.json(note);
   });
 });
 
