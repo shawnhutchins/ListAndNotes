@@ -8,6 +8,6 @@ html
   body
     .loadContent
       - for (var i = 0; i < notesFound.length; i++){
-        a(href="/") #{notesFound[i].note}
+        a(href="notes/" + notesFound[i]._id) #{notesFound[i].note}
         br
       - }
