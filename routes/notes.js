@@ -33,13 +33,13 @@ router.post('/save', function(req, res) {
 
 router.get('/', function(req, res) {
 
-  mNote.find({}, function(err, notesFound) {
+  mNote.find({}, function(err, note) {
     if (err) {
       throw err;
     }
 
     res.render('notes', {
-      notesFound: notesFound,
+      note: note,
     });
   });
 });
@@ -50,7 +50,10 @@ router.get('/:note_id', function(req, res) {
       throw err;
     }
   
-    res.json(note);
+    res.render('notes', {
+      note: note,
+    });
+    //res.json(note);
   });
 });
 
