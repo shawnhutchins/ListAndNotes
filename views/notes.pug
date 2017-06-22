@@ -22,7 +22,6 @@ html
         form(action="/notes/save" method="post")
           label Notes
           textarea(type="text" name="note" placeholder="Take some notes!")
-            | #{note}
           .noteMenu
             span.noteMenuCell
               input(type="submit" value="Save")

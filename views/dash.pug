@@ -7,6 +7,8 @@ html
     title List and Notes Dash
   body
     .loadContent
+      a(href="notes/") New Note
+      br
       - for (var i = 0; i < notesFound.length; i++){
         a(href="notes/" + notesFound[i]._id) #{notesFound[i].note}
         br

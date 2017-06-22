@@ -32,16 +32,8 @@ router.post('/save', function(req, res) {
 });
 
 router.get('/', function(req, res) {
-
-  mNote.find({}, function(err, note) {
-    if (err) {
-      throw err;
-    }
-
-    res.render('notes', {
-      note: note,
-    });
-  });
+  //render new notes page
+  res.render('notes'); 
 });
 
 router.get('/:note_id', function(req, res) {
@@ -50,7 +42,7 @@ router.get('/:note_id', function(req, res) {
       throw err;
     }
   
-    res.render('notes', {
+    res.render('notesEdit', {
       note: note,
     });
     //res.json(note);
