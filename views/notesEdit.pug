@@ -9,8 +9,9 @@ html
   body
     .noteContainer
       .noteEntry
-        form(action="/notes/save" method="post")
+        form(action="/notes/saveEdit" method="post")
           label Notes
+          input(type="hidden" name="noteId" value=note._id)
           textarea(type="text" name="note" placeholder="Editing note")
             | #{note.note}
           .noteMenu

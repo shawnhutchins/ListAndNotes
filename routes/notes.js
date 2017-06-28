@@ -13,6 +13,12 @@ router.use(function(req, res, next) {
 
 //routes
 
+router.get('/', function(req, res) {
+  //render new notes page
+  res.render('notes'); 
+});
+
+
 router.post('/save', function(req, res) {
   console.log(req.body);
 
@@ -28,13 +34,23 @@ router.post('/save', function(req, res) {
     console.log('Note Saved!');
   });
 
-  res.redirect('/notes');
+  res.redirect('/');
 });
 
-router.get('/', function(req, res) {
-  //render new notes page
-  res.render('notes'); 
+
+router.post('/saveEdit', function(req, res) { 
+  console.log(req.body.noteId);
+  mNote.update({ '_id': req.body.noteId }, 
+    { $set: { note: req.body.note } },
+    function (err, result) {
+      if (err) {
+        throw err;
+      }
+      console.log(result);
+    });
+  res.redirect('/');
 });
+
 
 router.get('/:note_id', function(req, res) {
   mNote.findById(req.params.note_id, function(err, note) {
@@ -45,7 +61,7 @@ router.get('/:note_id', function(req, res) {
     res.render('notesEdit', {
       note: note,
     });
-    //res.json(note);
+    //res.json(note);  
   });
 });
 

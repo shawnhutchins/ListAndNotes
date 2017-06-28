@@ -1,6 +1,7 @@
 DOING
--create a view for editing notes that is seperate from the note creation page so that dont have to always have
-  the note variable being passed even when its not needed like when creating a new note.
+-make the save button save the the note being edited rather than making a new note.
+
+(finished) -create a view for editing notes that is seperate from the note creation page so that dont have to always have the note variable being passed even when its not needed like when creating a new note.
 
 (finished) -create a view for notes
 
